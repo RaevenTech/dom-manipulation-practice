@@ -76,3 +76,58 @@ if (early && age > 18) {
 }
 */
 /* rock paper scissors */
+
+// this is players choices rock, paper or sissors
+const getUserChoice = (userInput) => {
+    userInput = userInput.toLowerCase();
+    if (
+        userInput === "rock" ||
+        userInput === "paper" ||
+        userInput === "scissors"
+    ) {
+        return userInput;
+    } else {
+        console.log("Error!");
+    }
+};
+// assign a random number to a user choice rock, paper or sissors
+const getComputerChoice = () => {
+    let randomNum = Math.floor(Math.random() * 3);
+    switch (randomNum) {
+        case 0:
+            return "paper";
+        case 1:
+            return "rock";
+        case 2:
+            return "sissors";
+    }
+};
+//console.log(getComputerChoice("paper"));
+
+// comparing the player choice vs computer choice
+const determineWinner = (userChoice, computerChoice) => {
+    if (userChoice === computerChoice) {
+        return "Game Tied";
+    }
+    if (userChoice === "rock" && computerChoice === "paper") {
+        return "you lose";
+    } else if (userChoice === "paper" && computerChoice === "sissors") {
+        return "you lose";
+    } else if (userChoice === "sissors" && computerChoice === "rock") {
+        return "you lose";
+    } else {
+        return "WINNER!";
+    }
+};
+//console.log(determineWinner("sissors", "rock"));
+
+// playing the game
+
+const playGame = () => {
+    let userChoice = getUserChoice("rock");
+    let computerChoice = getComputerChoice();
+    console.log("you threw: " + userChoice);
+    console.log("computer played: " + computerChoice);
+    console.log(determineWinner(userChoice, computerChoice));
+};
+playGame();
