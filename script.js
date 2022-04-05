@@ -10,6 +10,7 @@ if (myAge > 40) {
     document.write("I am old");
 }
 */
+/*----------------------------------------------------------------- magic 8 ball --------------------------------------------------------------*/
 /* magic 8 ball
 
 var userName = "Raeven";
@@ -52,7 +53,7 @@ switch (randomNumber) {
 }
 console.log(eightBall);
 */
-
+/*------------------------------------------------------------------------ race day number allocator------------------------------------------------------------------------*/
 /* race day allocator
 let raceNumber = Math.floor(Math.random() * 1000);
 let early = true;
@@ -75,7 +76,7 @@ if (early && age > 18) {
     console.log("Please approach the registration desk, thanks!");
 }
 */
-/* rock paper scissors */
+/* ---------------------------------------------------------------rock paper scissors------------------------------------------------------------------------------------ */
 
 // this is players choices rock, paper or sissors
 const getUserChoice = (userInput) => {
@@ -131,3 +132,73 @@ const playGame = () => {
     console.log(determineWinner(userChoice, computerChoice));
 };
 playGame();
+
+/*------------------------------------------------------------------------  sleep debt calculator -------------------------------------------------------------------------*/
+
+const getSleepHours = (day) => {
+    switch (day) {
+        case "monday":
+            return 6;
+            break;
+        case "tuesday":
+            return 9;
+            break;
+        case "wednesday":
+            return 6;
+            break;
+        case "thursday":
+            return 9;
+            break;
+        case "friday":
+            return 6;
+            break;
+        case "saturday":
+            return 9;
+            break;
+        case "sunday":
+            return 9;
+            break;
+        default:
+            return "Error!";
+    }
+};
+//console.log(getSleepHours("tuesday"));
+const getActualSleepHours = () =>
+    getSleepHours("monday") +
+    getSleepHours("tuesday") +
+    getSleepHours("wednesday") +
+    getSleepHours("thursday") +
+    getSleepHours("friday") +
+    getSleepHours("saturday") +
+    getSleepHours("sunday");
+
+const getIdealSleepHours = () => {
+    let idealHours = 8;
+    return idealHours * 7;
+};
+//console.log(getActualSleepHours());
+//console.log(getIdealSleepHours());
+
+const calculateSleepDebt = () => {
+    let actualSleepHours = getActualSleepHours();
+    let idealSleepHours = getIdealSleepHours();
+
+    if (actualSleepHours === idealSleepHours) {
+        console.log("User got the perfect amount of sleep." + idealSleepHours);
+    } else if (actualSleepHours > idealSleepHours) {
+        console.log(
+            "User got " +
+                (idealSleepHours - actualSleepHours) +
+                " hours sleep." +
+                "More sleep than needed."
+        );
+    } else if (actualSleepHours < idealSleepHours) {
+        console.log(
+            "User got " +
+                (idealSleepHours - actualSleepHours) +
+                " hours less sleep than needed." +
+                "Needs more rest."
+        );
+    }
+};
+console.log(calculateSleepDebt());
