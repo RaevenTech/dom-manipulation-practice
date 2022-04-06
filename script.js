@@ -131,7 +131,7 @@ const playGame = () => {
     console.log("computer played: " + computerChoice);
     console.log(determineWinner(userChoice, computerChoice));
 };
-playGame();
+//playGame();
 
 /*------------------------------------------------------------------------  sleep debt calculator -------------------------------------------------------------------------*/
 
