@@ -1,4 +1,6 @@
-/*let myAge = 38;
+/*----------------------------------------------------------- age calculator -----------------------------------------------------------*/
+
+let myAge = 38;
 
 if (myAge > 40) {
     document.write("You are young");
@@ -9,9 +11,8 @@ if (myAge > 40) {
 } else {
     document.write("I am old");
 }
-*/
+
 /*----------------------------------------------------------------- magic 8 ball --------------------------------------------------------------*/
-/* magic 8 ball
 
 var userName = "Raeven";
 
@@ -51,10 +52,10 @@ switch (randomNumber) {
         eightBall = "Signs point to yes";
         break;
 }
-console.log(eightBall);
-*/
+//console.log(eightBall);
+
 /*------------------------------------------------------------------------ race day number allocator------------------------------------------------------------------------*/
-/* race day allocator
+
 let raceNumber = Math.floor(Math.random() * 1000);
 let early = true;
 let age = 19;
@@ -75,7 +76,7 @@ if (early && age > 18) {
 } else {
     console.log("Please approach the registration desk, thanks!");
 }
-*/
+
 /* ---------------------------------------------------------------rock paper scissors------------------------------------------------------------------------------------ */
 
 // this is players choices rock, paper or sissors
@@ -202,3 +203,25 @@ const calculateSleepDebt = () => {
     }
 };
 console.log(calculateSleepDebt());
+
+/*------------------------------------------------------------------------  Whale speech converter -------------------------------------------------------------------------*/
+
+let input = "Winner winner chicken dinner!";
+const vowels = ["a", "e", "i", "o", "u"];
+let resultArray = [];
+
+for (let i = 0; i < input.length; i++) {
+    if (input[i] === "e") {
+        resultArray.push(input[i]);
+    }
+    for (let j = 0; j < vowels.length; j++) {
+        if (input[i] === vowels[j]) {
+            resultArray.push(input[i]);
+        }
+    }
+}
+let resultString = resultArray.join("").toUpperCase();
+
+//console.log(input[i]);
+//console.log(i);
+//console.log(resultString);
