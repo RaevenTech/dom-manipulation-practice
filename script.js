@@ -224,4 +224,4 @@ let resultString = resultArray.join("").toUpperCase();
 
 //console.log(input[i]);
 //console.log(i);
-//console.log(resultString);
+console.log(resultString);
