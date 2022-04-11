@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Details Page</h1>
+
+        <script>
+            const param = new URLSearchParams(window.location.search);
+            const id = param.get("bookId");
+            const category = param.get("category");
+            fetch("https://striveschool-api.herokuapp.com/books/" + id)
+                .then((response) => response.json())
+                .then((data) => {
+                    const book = `<p>${data.title}</p> <p>${category}</p>`;
+                    document.body.innerHTML += book;
+                    console.log(data);
+                });
+        </script>
+    </body>
+</html>
